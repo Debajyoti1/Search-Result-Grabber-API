@@ -23,8 +23,6 @@ def index():
 @app.route('/google',methods=['GET','POST'])
 def google():
     se='Google'
-    country=request.form['country']
-    print('se={} and c={}'.format(se,country))
-    return ('se={} and c={}'.format(se,country))
+    return 'hi'
 if __name__ == '__main__':
     app.run(debug=True)
