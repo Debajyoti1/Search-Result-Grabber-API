@@ -19,5 +19,11 @@ app.secret_key='Hellothere'
 @app.route('/',methods=['GET','POST'])
 def index():
     return render_template('index.html')
+
+@app.route('/google',methods=['GET','POST'])
+def google():
+    se='Google'
+    country=request.form['country']
+    return 'se={} and c={}'.format(se,country)
 if __name__ == '__main__':
     app.run(debug=True)
