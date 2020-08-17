@@ -24,6 +24,7 @@ def index():
 def google():
     se='Google'
     country=request.form['country']
-    return 'se={} and c={}'.format(se,country)
+    print('se={} and c={}'.format(se,country))
+    return ('se={} and c={}'.format(se,country))
 if __name__ == '__main__':
     app.run(debug=True)
