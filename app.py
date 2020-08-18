@@ -11,11 +11,9 @@ def index():
 
 @app.route('/google',methods=['GET','POST'])
 def google():
-    try:
-        ret=Google(request.args["country"],request.args["query"])
-        return jsonify({'response' : ret})
-    except:
-        return 'TADA'
+    ret=Google(request.args["country"],request.args["query"])
+    return jsonify({'response' : ret})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
