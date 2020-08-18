@@ -11,8 +11,11 @@ def index():
 
 @app.route('/google',methods=['GET','POST'])
 def google():
-    ret=Google(request.args["country"],request.args["query"])
-    return jsonify({'response' : ret})
+    try:
+        ret=Google(request.args["country"],request.args["query"])
+        return jsonify({'response' : ret})
+    except:
+        return '<h1>Something is broken!</h1>'
 
 
 if __name__ == '__main__':
