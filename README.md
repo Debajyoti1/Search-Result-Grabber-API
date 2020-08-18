@@ -1,7 +1,7 @@
 # Search-Result-Grabber-API
  Using this API one can grab search result data in json format.
 
-use the url for retriving data, https://ddutta.herokuapp.com/google?country=a&query={YOUR QUERY}
+use the url for retriving data, https://ddutta.herokuapp.com/google?country=a&query= {YOUR+QUERY}
  
  so an example can be https://ddutta.herokuapp.com/google?country=a&query=gadgetguys
  It will always return a json response.
