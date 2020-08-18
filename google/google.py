@@ -11,7 +11,7 @@ def Google(c,q):
     driver.get('https://google.co.in/search?q='+q)
     source=driver.page_source
     driver.close()
-    soup=BeautifulSoup(source)
+    soup=BeautifulSoup(source,"lxml")
     linktext=soup.findAll('div',class_='r')
     link=[]
     text=[]
