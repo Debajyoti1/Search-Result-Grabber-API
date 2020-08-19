@@ -16,6 +16,9 @@ def google():
         return jsonify({'response' : ret})
     except:
         return '<h1>Something is broken!</h1>'
+@app.route('/ip')
+def get_my_ip():
+    return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
 
 
 if __name__ == '__main__':
