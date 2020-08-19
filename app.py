@@ -18,7 +18,10 @@ def google():
         return '<h1>Something is broken!</h1>'
 @app.route('/ip')
 def get_my_ip():
-    return jsonify({'ip': request.environ['HTTP_X_FORWARDED_FOR']}), 200
+    if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+        return jsonify{'ip': request.environ['REMOTE_ADDR']}
+    else:
+        return {'ip': request.environ['HTTP_X_FORWARDED_FOR']}
 
 
 if __name__ == '__main__':
