@@ -21,7 +21,7 @@ def get_my_ip():
     if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
         return jsonify({'ip': request.environ['REMOTE_ADDR']})
     else:
-        return {'ip': request.environ['HTTP_X_FORWARDED_FOR']}
+        return jsonify({'ip': request.environ['HTTP_X_FORWARDED_FOR']})
 
 
 if __name__ == '__main__':
