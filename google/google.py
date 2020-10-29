@@ -12,13 +12,13 @@ def Google(c,q):
     source=driver.page_source
     driver.close()
     soup=BeautifulSoup(source,"lxml")
-    linktext=soup.findAll('div',class_='r')
+    linktext=soup.findAll('div',class_='g')
     link=[]
     text=[]
     for i in linktext:
         link.append(i.a.get('href'))
         text.append(i.a.text)
-    description=soup.findAll('span',class_='st')
+    description=soup.findAll('span',class_='aCOpRe')
     des=[]
     for j in description:
         des.append(j.text)
